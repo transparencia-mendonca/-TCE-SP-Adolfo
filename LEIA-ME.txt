@@ -1,0 +1,59 @@
+TCESP Adolfo — v0.9.18-AD
+BASE HISTÓRICA PERMANENTE • MODELO v0.9.18
+
+OBJETIVO
+--------
+Portal estático de transparência baseado no modelo da v0.9.18 de José Bonifácio, adaptado a Adolfo/SP.
+A base histórica foi coletada diretamente da API oficial do Portal da Transparência Municipal do TCESP em 20/09/2026.
+
+BASE PERMANENTE
+---------------
+Exercícios: 2014 a 2026.
+2014–2025: janeiro a dezembro.
+2026: janeiro a julho, último período disponível na coleta.
+Totais: 256.705 registros de despesas e 8.051 registros de receitas.
+
+Os arquivos data-AAAA.json são a fotografia histórica permanente. O painel usa IndexedDB apenas como camada local de trabalho e para atualizações posteriores. Atualizações futuras de interface NÃO devem trocar o nome do banco nem apagar o IndexedDB.
+
+ARQUIVOS DO PORTAL
+------------------
+- index.html
+- app.js
+- style.css
+- sw.js
+- seed-data.js
+- baseline-manifest.json
+- manifest.webmanifest
+- icon.svg
+- .nojekyll
+- data-2014.json ... data-2026.json
+
+INSTALAÇÃO NO GITHUB
+--------------------
+1. Crie um repositório público, sugerido: TCE-SP-Adolfo.
+2. Envie os arquivos deste pacote de interface/configuração.
+3. Extraia também o pacote de dados TCESP_Adolfo_BASE_2014_2026.zip e envie data-2014.json ... data-2026.json.
+4. Ative GitHub Pages em Settings > Pages, Branch: main, /(root).
+5. Não coloque os JSONs dentro de subpastas: o carregador espera os arquivos na raiz do site.
+
+PERENIZAÇÃO
+-----------
+- Banco local: tcesp-adolfo-v6.
+- Não alterar DBN por mudança visual ou simples nova versão.
+- Não apagar baseline-manifest.json nem data-AAAA.json em atualizações comuns.
+- Para atualizar a fotografia-base, substituir apenas os anos intencionalmente atualizados e atualizar o manifesto.
+- O botão Restaurar base recompõe a base local a partir desses arquivos permanentes.
+
+FONTE
+-----
+Portal da Transparência Municipal do Tribunal de Contas do Estado de São Paulo (TCESP).
+Endpoints mensais utilizados:
+/api/json/despesas/adolfo/{ano}/{mes}
+/api/json/receitas/adolfo/{ano}/{mes}
+
+OBSERVAÇÃO
+----------
+Os módulos de sinais de auditoria são triagens de dados, não conclusões sobre regularidade, natureza jurídica da despesa ou responsabilidade de agentes/fornecedores. A confirmação exige o exame dos documentos do procedimento correspondente.
+
+Build: 0918AD-20260920
+Baseline: adolfo-baseline-2026-09-20
